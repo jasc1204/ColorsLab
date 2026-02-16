@@ -79,4 +79,4 @@ Each script reads JSON from the request body and replies in JSON format, making 
 
 ## AI Usage
 
-Portions of this project’s refactoring and documentation, including `.gitignore` updates and configuration handling, were assisted by GitHub Copilot Chat using the GPT-5.1 model. All generated changes were reviewed and adapted to fit the course requirements.
+GitHub Copilot Chat (GPT-5.1) was used to help write this project summary/README. All AI-assisted text was reviewed and approved by me though.
