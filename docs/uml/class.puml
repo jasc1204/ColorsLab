@@ -1,0 +1,86 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "Frontend" {
+  class CodeJS {
+    - urlBase : string
+    - extension : string
+    - userId : int
+    - firstName : string
+    - lastName : string
+    + doLogin() : void
+    + saveCookie() : void
+    + readCookie() : void
+    + doLogout() : void
+    + searchColor() : void
+    + addColor() : void
+  }
+
+  class LoginPage {
+    + loginName : input
+    + loginPassword : input
+    + loginButton : button
+    + loginResult : span
+  }
+
+  class ColorPage {
+    + userName : span
+    + logoutButton : button
+    + searchText : input
+    + searchColorButton : button
+    + colorSearchResult : span
+    + colorList : paragraph
+    + colorText : input
+    + addColorButton : button
+    + colorAddResult : span
+  }
+}
+
+package "Backend API (PHP)" {
+  class LoginAPI {
+    + getRequestInfo() : array
+    + returnWithInfo(firstName, lastName, id) : json
+    + returnWithError(err) : json
+  }
+
+  class SearchColorsAPI {
+    + getRequestInfo() : array
+    + returnWithInfo(searchResults) : json
+    + returnWithError(err) : json
+  }
+
+  class AddColorAPI {
+    + getRequestInfo() : array
+    + returnWithError(err) : json
+  }
+}
+
+package "Database Entities" {
+  class User {
+    + ID : int
+    + Login : string
+    + Password : string
+    + firstName : string
+    + lastName : string
+  }
+
+  class Color {
+    + ID : int
+    + UserId : int
+    + Name : string
+  }
+}
+
+LoginPage ..> CodeJS : triggers doLogin()
+ColorPage ..> CodeJS : triggers searchColor(), addColor(), doLogout()
+CodeJS ..> LoginAPI : POST /Login.php
+CodeJS ..> SearchColorsAPI : POST /SearchColors.php
+CodeJS ..> AddColorAPI : POST /AddColor.php
+
+LoginAPI ..> User : query by Login+Password
+SearchColorsAPI ..> Color : query by UserId+Name LIKE
+AddColorAPI ..> Color : insert(UserId, Name)
+
+User "1" -- "0..*" Color : owns
+
+@enduml
