@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor #F7FBFF
+  BorderColor #2F4F4F
+  ArrowColor #2F4F4F
+}
+
+actor "User" as User
+
+rectangle "COLORS Web Application" {
+  usecase "Login" as UC_Login
+  usecase "Open Color Page" as UC_OpenColor
+  usecase "Search Colors" as UC_Search
+  usecase "Add Color" as UC_Add
+  usecase "Logout" as UC_Logout
+}
+
+User --> UC_Login
+User --> UC_OpenColor
+User --> UC_Search
+User --> UC_Add
+User --> UC_Logout
+
+note right of UC_OpenColor
+  If cookie is missing/expired,
+  user is redirected to Login page.
+end note
+
+@enduml
