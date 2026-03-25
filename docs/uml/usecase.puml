@@ -15,6 +15,14 @@ rectangle "COLORS Web Application" {
   usecase "Search Colors" as UC_Search
   usecase "Add Color" as UC_Add
   usecase "Logout" as UC_Logout
+<<<<<<< HEAD
+=======
+
+  usecase "Validate Cookie" as UC_ValidateCookie
+  usecase "Authenticate Credentials" as UC_Auth
+  usecase "Query User Colors" as UC_QueryColors
+  usecase "Insert New Color" as UC_InsertColor
+>>>>>>> c2ef744d0f6e9693a978f31b018555e35cdddbfb
 }
 
 User --> UC_Login
@@ -23,6 +31,14 @@ User --> UC_Search
 User --> UC_Add
 User --> UC_Logout
 
+<<<<<<< HEAD
+=======
+UC_Login .> UC_Auth : <<include>>
+UC_OpenColor .> UC_ValidateCookie : <<include>>
+UC_Search .> UC_QueryColors : <<include>>
+UC_Add .> UC_InsertColor : <<include>>
+
+>>>>>>> c2ef744d0f6e9693a978f31b018555e35cdddbfb
 note right of UC_OpenColor
   If cookie is missing/expired,
   user is redirected to Login page.

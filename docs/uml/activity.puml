@@ -17,7 +17,10 @@ if (Login success?) then (yes)
     while (User still on color page?) is (yes)
       if (Action = Search?) then (search)
         :Enter search text;
+<<<<<<< HEAD
         :Click "Search Color";
+=======
+>>>>>>> c2ef744d0f6e9693a978f31b018555e35cdddbfb
         :POST SearchColors.php(search, userId);
         if (Results found?) then (yes)
           :Display retrieved colors;
@@ -26,7 +29,10 @@ if (Login success?) then (yes)
         endif
       else (add)
         :Enter color name;
+<<<<<<< HEAD
         :Click "Add Color";
+=======
+>>>>>>> c2ef744d0f6e9693a978f31b018555e35cdddbfb
         :POST AddColor.php(color, userId);
         :Show "Color has been added";
       endif
