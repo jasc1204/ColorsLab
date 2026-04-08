@@ -51,8 +51,8 @@ body
 
 .buttons:hover{
     background-color: #00d5124f;
-    color: #FFFFFF;
-    opacity: 50%;
+    color: #ffffff;
+    opacity: 0.5;
 }
 
 #loginName

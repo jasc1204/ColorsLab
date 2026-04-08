@@ -70,6 +70,17 @@ The frontend JavaScript calls the PHP endpoints in `LAMPAPI/`:
 
 Each script reads JSON from the request body and replies in JSON format, making it easy to call from JavaScript `fetch` or other clients.
 
+## CI and Linting
+
+This repository now includes a GitHub Actions workflow that runs on every push and pull request. It installs the Node-based lint tools and checks the HTML, CSS, and JavaScript files.
+
+To run the same checks locally, install dependencies and run:
+
+```bash
+npm install
+npm run lint
+```
+
 ## Assumptions and Limitations
 
 - Authentication is simplified for lab purposes and does not implement advanced security best practices (password hashing, sessions, CSRF protection, etc.).

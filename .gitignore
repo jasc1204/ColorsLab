@@ -23,3 +23,6 @@ TestResults.xml
 
 # Local DB config containing real credentials (do NOT commit)
 LAMPAPI/dbconfig.local.php
+
+# Node dependencies for CI linting
+node_modules/
