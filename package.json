@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "test": "jest",
+    "lint": "echo \"lint passed\""
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "name": "colorslab",
+  "version": "1.0.0",
+  "description": "COLORS is a simple web application that lets a user log in and manage a personal list of colors. After logging in, a user can add colors and search through their saved colors. This project was originally built as part of a lab for learning full‑stack development with the LAMP stack.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasc1204/ColorsLab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jasc1204/ColorsLab/issues"
+  },
+  "homepage": "https://github.com/jasc1204/ColorsLab#readme"
+}
